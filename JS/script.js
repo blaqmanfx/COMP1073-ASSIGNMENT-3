@@ -9,3 +9,12 @@ const searchBtn = document.getElementById('searchBtn');
 const weatherDisplay = document.getElementById('weatherDisplay');
 const errorDiv = document.getElementById('error');
 const loadingDiv = document.getElementById('loading');
+
+// Add event listeners
+searchBtn.addEventListener('click', searchWeather);
+cityInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        searchWeather();
+    }
+});
+
