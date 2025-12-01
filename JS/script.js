@@ -92,4 +92,23 @@ function displayWeather(data) {
     weatherDisplay.classList.remove('hidden');
 }
 
+// Helper functions
+function showLoading() {
+    loadingDiv.classList.remove('hidden');
+}
+
+function hideLoading() {
+    loadingDiv.classList.add('hidden');
+}
+
+function showError(message) {
+    errorDiv.textContent = message;
+    errorDiv.classList.remove('hidden');
+    weatherDisplay.classList.add('hidden');
+}
+
+function hideError() {
+    errorDiv.classList.add('hidden');
+}
+
 
