@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
 </head>
 <body>
+     <div class="container">
+        <h1>Weather App</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name (e.g., Toronto)">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+        <div id="loading" class="loading hidden">Loading...</div>
+
+        <div id="weatherDisplay" class="weather-display hidden">
+            <h2 id="cityName"></h2>
+            <div class="weather-main">
+                <img id="weatherIcon" src="" alt="">
+                <div class="temp-display">
+                    <span id="temperature"></span>°C
+                </div>
+            </div>
+            <p id="description"></p>
+            
+            <div class="weather-details">
+                <div class="detail">
+                    <strong>Feels Like:</strong>
+                    <span id="feelsLike"></span>°C
+                </div>
+                <div class="detail">
+                    <strong>Humidity:</strong>
+                    <span id="humidity"></span>%
+                </div>
+                <div class="detail">
+                    <strong>Wind Speed:</strong>
+                    <span id="windSpeed"></span> m/s
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
     
 </body>
 </html>
