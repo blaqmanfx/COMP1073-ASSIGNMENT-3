@@ -30,3 +30,32 @@ function searchWeather() {
     getWeather(city);
 }
 
+// Fetch weather data from API
+async function getWeather(city) {
+    // Show loading state
+    showLoading();
+    
+    try {
+        // Build the API URL with parameters
+        const url = `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`;
+        
+        // Make the API request
+        const response = await fetch(url);
+        
+        // Check if request was successful
+        if (!response.ok) {
+            throw new Error('City not found');
+        }
+        
+        // Parse the JSON response
+        const data = await response.json();
+        
+        // Display the weather data
+        displayWeather(data);
+        
+    } catch (error) {
+        showError('Unable to find weather data for that city');
+    }
+}
+
+
