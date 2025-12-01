@@ -18,3 +18,15 @@ cityInput.addEventListener('keypress', (e) => {
     }
 });
 
+// function to search for weather
+function searchWeather() {
+    const city = cityInput.value.trim();
+    
+    if (city === '') {
+        showError('Please enter a city name');
+        return;
+    }
+    
+    getWeather(city);
+}
+
