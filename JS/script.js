@@ -58,4 +58,38 @@ async function getWeather(city) {
     }
 }
 
+// Display weather data in the DOM
+
+function displayWeather(data) {
+    // Hide loading and error messages
+    hideLoading();
+    hideError();
+    
+    // Get data from the API response
+    const cityName = data.name;
+    const country = data.sys.country;
+    const temperature = Math.round(data.main.temp);
+    const feelsLike = Math.round(data.main.feels_like);
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
+    const description = data.weather[0].description;
+    const iconCode = data.weather[0].icon;
+    
+    // Update the HTML elements with the data
+    document.getElementById('cityName').textContent = `${cityName}, ${country}`;
+    document.getElementById('temperature').textContent = temperature;
+    document.getElementById('description').textContent = description;
+    document.getElementById('feelsLike').textContent = feelsLike;
+    document.getElementById('humidity').textContent = humidity;
+    document.getElementById('windSpeed').textContent = windSpeed;
+    
+    // Set the weather icon
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    document.getElementById('weatherIcon').src = iconUrl;
+    document.getElementById('weatherIcon').alt = description;
+    
+    // Show the weather display
+    weatherDisplay.classList.remove('hidden');
+}
+
 
